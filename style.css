@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+:root {
+  --mainbackground: hsl(233, 47%, 7%);
+  --cardbackground: hsl(244, 38%, 16%);
+  --Softvioletaccent: hsl(276, 69%, 23%);
+  --White: hsl(0, 0%, 100%);
+  --mainparagraph: hsla(0, 0%, 100%, 0.75);
+  --statheadings: hsla(0, 0%, 100%, 0.6);
+  --fontfamily: "Inter", sans-serif;
+  --fontfamilytwo: "Lexend Deca", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: var(--mainbackground);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  width: 1040px;
+  height: 410px;
+  background-color: var(--cardbackground);
+  border-radius: 10px;
+}
+
+.left-side {
+  width: 50%;
+}
+.left-side h1 {
+  color: white;
+  width: 80%;
+  font-size: 35px;
+  font-family: var(--fontfamily);
+  margin: 70px 70px 30px;
+}
+.left-side .paragraph {
+  color: var(--statheadings);
+  margin: 0 70px 60px;
+  font-family: var(--fontfamilytwo);
+}
+.left-side h1 span {
+  color: var(--Softvioletaccent);
+  font-size: 35px;
+}
+.data {
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 35px;
+}
+.number {
+  color: var(--White);
+  font-size: 20px;
+  font-family: var(--fontfamily);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.word {
+  text-transform: uppercase;
+  color: var(--statheadings);
+  font-family: var(--fontfamilytwo);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.right-side {
+  width: 50%;
+  position: relative;
+}
+.image img {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 520px;
+  height: 410px;
+}
+.image {
+  position: relative;
+}
+.image::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 410px;
+  background-color: var(--Softvioletaccent);
+  opacity: 0.6;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+  body {
+    text-align: center;
+  }
+  .container {
+    flex-direction: column-reverse;
+    width: 520px;
+    height: 1012px;
+    margin: 20px 10px;
+  }
+  .left-side h1 {
+    width: 130%;
+    font-size: 35px;
+    font-family: var(--fontfamily);
+    margin: 61px 0px 40px 81px;
+  }
+  .left-side .paragraph {
+    margin: 8px 121px 54px;
+    width: 104%;
+    font-size: 20px;
+    font-weight: normal;
+  }
+  .data {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-right: -245px;
+  }
+  .image img {
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 0px;
+
+    margin-bottom: -20px;
+  }
+  .image {
+    margin-top: -20px;
+  }
+  .image::before {
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 0px;
+  }
+}
